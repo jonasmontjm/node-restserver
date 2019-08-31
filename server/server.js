@@ -1,5 +1,7 @@
 require('./config/config');
-const app = require('./routes/usuario');
+const express = require('express');
+const app = express();
+app.use(require('./routes/index'));
 const mongoose = require('mongoose');
 
 
