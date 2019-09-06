@@ -24,7 +24,7 @@ process.env.SEED = process.env.SEED || 'este-es-el-seed-desrrollo';
 // googleID
 //
 
-process.env.CLIENT_ID = process.env.CLIENT_ID || '207143455029-tg8a022fvo26svs2jr07cj3n643onsen.apps.googleusercontent.com';
+process.env.CLIENT_ID = process.env.CLIENT_ID || '207143455029-e1d1tqmpii8mgb65epjpo6nfpioluqfr.apps.googleusercontent.com';
 
 
 //

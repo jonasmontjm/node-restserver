@@ -99,7 +99,7 @@ app.post('/google', async(req, res) => {
         .catch(e => {
             return res.status(403).json({
                 ok: false,
-                err: e
+                err: { message: 'no funciono la consulta del token' }
             })
         });
 
@@ -114,7 +114,6 @@ app.post('/google', async(req, res) => {
     });
 
     if (usuarioDB) {
-
         if (usuarioDB.google === false) {
             return res.status(400).json({
                 ok: false,
