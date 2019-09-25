@@ -114,13 +114,10 @@ app.delete('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, re
     //res.json('delete Usuario');
     let id = req.params.id
 
-    let cambiaEstado = {
-        estado: false
-    };
 
     //comienzo eliminar usuario
-    //Usuario.findByIdAndRemove(id, (err, usuarioBorrado) => {
-    Usuario.findByIdAndUpdate(id, cambiaEstado, { new: true }, (err, usuarioBorrado) => {
+    Usuario.findByIdAndRemove(id, (err, categoriaBorrado) => {
+        //Usuario.findByIdAndUpdate(id, cambiaEstado, { new: true }, (err, usuarioBorrado) => {
         if (err) {
             return res.status(400).json({
                 ok: false,
@@ -128,11 +125,11 @@ app.delete('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, re
             });
         };
 
-        if (!usuarioBorrado) {
+        if (!categoriaBorrado) {
             return res.status(400).json({
                 ok: false,
                 err: {
-                    message: 'Usuario no Encontrado'
+                    message: 'Categoria no Encontrado'
                 }
             });
 
@@ -145,9 +142,6 @@ app.delete('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, re
         });
 
     });
-    // fin eliminar
-
-
 
 });
 
